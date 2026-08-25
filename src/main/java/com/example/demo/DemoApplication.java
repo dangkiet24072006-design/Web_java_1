@@ -1,5 +1,8 @@
 package com.example.demo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,5 +39,12 @@ public class DemoApplication {
 	@GetMapping("/students")
 	public Student getStudent() {
     	return new Student(1, "Nguyễn Văn A", 20);
+	}
+	@GetMapping("/studentall")
+	public List<Student> getStudents() {
+    	List<Student> list = new ArrayList<>();
+    	list.add(new Student(1, "A", 20));
+    	list.add(new Student(2, "B", 21));
+    	return list;
 	}
 }
