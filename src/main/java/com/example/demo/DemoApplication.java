@@ -33,4 +33,8 @@ public class DemoApplication {
 	public String searchStudent(@RequestParam String name,@RequestParam(defaultValue = "1") int age) {
     	return "Tên=" + name + ", tuổi=" + age;
 	}
+	@GetMapping("/students")
+	public Student getStudent() {
+    	return new Student(1, "Nguyễn Văn A", 20);
+	}
 }
